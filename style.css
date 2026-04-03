@@ -1,0 +1,185 @@
+/* Variables de la Paleta 12 */
+:root {
+    --color-fondo: #F2EBD5; /* Crema claro */
+    --color-oscuro: #337568; /* Verde/Azul oscuro para textos formales */
+    --color-acento: #5C879D; /* Azul Pizarra para botones y resaltados */
+    --color-secundario: #D5E8F2; /* Azul muy clarito para tarjetas */
+    --color-blanco: #ffffff;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-oscuro);
+    /* Esto permite el scroll suave cuando haces clic en el menú */
+    scroll-behavior: smooth; 
+}
+
+/* Tipografía para títulos */
+h1, h2, h3 {
+    font-weight: 800; /* ExtraBold */
+}
+
+/* Estilos del Navbar para que combine con la paleta */
+.navbar {
+    background-color: var(--color-fondo) !important;
+    box-shadow: 0 2px 10px rgba(51, 117, 104, 0.1); /* Sombra sutil */
+}
+
+.navbar-brand {
+    font-weight: 900;
+    color: var(--color-oscuro) !important;
+}
+
+.nav-link {
+    font-weight: 700;
+    color: var(--color-acento) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-oscuro) !important;
+}
+
+/* Estilos para el Hero Section */
+.hero-section {
+    min-height: 90vh; /* Ocupa casi toda la pantalla inicial */
+    display: flex;
+    align-items: center;
+}
+
+.hook-text {
+    color: var(--color-acento);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: var(--color-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+.hero-summary {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    font-weight: 700;
+    padding: 10px 25px;
+    border-radius: 8px; /* Bordes redondeados y amigables */
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+    transform: translateY(-2px); /* Pequeño salto al pasar el mouse */
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    color: var(--color-oscuro);
+    font-weight: 700;
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: 2px solid var(--color-oscuro);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+}
+
+/* Ajustes para listas con íconos */
+.icon-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon-list i {
+    color: var(--color-acento);
+    width: 25px; /* Alineación perfecta de los íconos */
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+/* Estilos para la Notificación Toast (Copiado) */
+.toast-custom {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+    text-align: center;
+    border-radius: 50px; /* Bordes totalmente redondeados tipo píldora */
+    padding: 12px 20px;
+    position: fixed;
+    z-index: 1050; /* Para que quede por encima del navbar y todo lo demás */
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.toast-custom.mostrar {
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px; /* Da un efecto de que "sube" al aparecer */
+}
+
+/* =========================================
+   MICRO-INTERACCIONES (Efecto Hover)
+   ========================================= */
+.hover-efecto {
+    /* Le decimos al navegador que anime estos cambios suavemente en 0.3 segundos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.hover-efecto:hover {
+    /* Eleva la tarjeta 8 píxeles hacia arriba */
+    transform: translateY(-8px); 
+    /* Crea una sombra más amplia y difuminada usando el verde/azul oscuro de tu paleta */
+    box-shadow: 0 15px 30px rgba(51, 117, 104, 0.15) !important; 
+}
+
+/* =========================================
+   ESTILOS PARA TYPED.JS (Máquina de Escribir)
+   ========================================= */
+.typed-cursor {
+    color: var(--color-acento); /* Color azul pizarra de tu paleta */
+    opacity: 1;
+    font-weight: 300;
+}
+
+/* =========================================
+   EFECTO INMERSIVO DE LUZ (Glow)
+   ========================================= */
+/* Primero, preparamos el ícono para que la transición sea suave */
+.icon-list i {
+    transition: color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+/* Cuando pases el ratón sobre la lista (<li>), el ícono cambiará */
+.icon-list li:hover i {
+    color: var(--color-acento); /* Asegura que el ícono tenga tu azul pizarra */
+    
+    /* Creamos dos capas de luz. La primera es sutil, la segunda es la que da el "glow" */
+    text-shadow: 
+        0 0 5px rgba(92, 135, 157, 0.5),  /* Luz interna sutil */
+        0 0 15px rgba(92, 135, 157, 0.8); /* Glow externo más fuerte */
+}
