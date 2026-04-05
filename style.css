@@ -41,11 +41,20 @@ h1, h2, h3 {
     color: var(--color-oscuro) !important;
 }
 
-/* Estilos para el Hero Section */
 .hero-section {
-    min-height: 90vh; /* Ocupa casi toda la pantalla inicial */
+    min-height: 90vh;
     display: flex;
     align-items: center;
+    padding-top: 80px; 
+    
+    /* El fondo base crema */
+    background-color: var(--color-fondo);
+    
+    /* El patrón de hexágonos SVG inyectado en código puro */
+    /* Usamos tu color oscuro (#337568) pero con una opacidad bajísima (0.09) para que sea una "marca de agua" elegante */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='104' viewBox='0 0 60 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 104L0 86.6V52L30 34.6l30 17.4v34.6L30 104zm0-69.4L0 17.3V-17.3l30-17.3 30 17.3v34.6L30 34.6z' fill='none' stroke='%23337568' stroke-width='1' stroke-opacity='0.09'/%3E%3C/svg%3E");
+    
+    position: relative;
 }
 
 .hook-text {

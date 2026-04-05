@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Fuentes | Portafolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,10 @@
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#inicio">Diego Fuentes</a>
+            <a class="navbar-brand d-flex align-items-center" href="#inicio">
+                <img src="favicon.png" alt="Logo Diego Fuentes" height="30" class="me-2">
+                Diego Fuentes
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -346,7 +350,7 @@
                 <div class="col-lg-5">
                     <h3 style="font-weight: 900; color: var(--color-fondo);">Diego Fuentes</h3>
                     <p style="opacity: 0.8; font-size: 0.95rem; max-width: 80%;">
-                        Ingeniero en Sistemas y Desarrollador Web. Transformando ideas en soluciones digitales eficientes y escalables.
+                        Ingeniero en Sistemas y Desarrollador Web. Construyendo lógica en el código y valor en los negocios.
                     </p>
                 </div>
 
@@ -364,7 +368,7 @@
                     <h5 class="mb-3" style="color: var(--color-acento);">Contacto</h5>
                     
                     <div class="d-flex flex-column gap-3">
-                        <a href="mailto:tu.correo@ejemplo.com" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                        <a href="#inicio" onclick="copiarContacto('email')" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                             <i class="fa-solid fa-envelope me-2"></i> Envíame un correo
                         </a>
                         <a href="https://www.linkedin.com/in/diego-fuentes-rubí/" target="_blank" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
