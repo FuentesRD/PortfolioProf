@@ -35,6 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
                     <li class="nav-item"><a class="nav-link" href="#lado-creativo">Intereses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#seccion-contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -43,7 +44,7 @@
     <section class="hero-section" id="inicio">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
+                <div class="col-lg-7 order-2 order-lg-1 mt-4 mt-lg-0">
                     <p class="hook-text">
                         <i class="fa-solid fa-code me-2"></i> 
                         <span id="typed-hook"></span> </p>
@@ -66,10 +67,14 @@
                             <i class="fa-solid fa-envelope"></i>
                         </button>
 
-                        <button onclick="copiarContacto('tel')" class="btn btn-outline-custom" title="Copiar teléfono">
-                            <i class="fa-solid fa-phone"></i>
+                        <button onclick="abrirWhatsApp()" class="btn btn-outline-custom" title="Enviar Whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </button>
                     </div>
+                </div>
+
+                <div class="col-lg-5 order-1 order-lg-2 text-center">
+                    <img src="assets/Pfp.jpeg" alt="Diego Fuentes Rubí" class="hero-profile-img hover-efecto">
                 </div>
             </div>
         </div>
@@ -122,10 +127,10 @@
                         <div class="mb-4">
                             <div class="d-flex justify-content-between mb-1">
                                 <span><i class="fa-solid fa-comment-dots me-2"></i> Inglés</span>
-                                <strong>C1 - C2(Conversacional)</strong>
+                                <strong>C2 (Cambridge Assessment)</strong>
                             </div>
                             <div class="progress" style="height: 6px; background-color: rgba(255,255,255,0.2);">
-                                <div class="progress-bar" style="width: 85%; background-color: var(--color-secundario);"></div>
+                                <div class="progress-bar" style="width: 100%; background-color: var(--color-secundario);"></div>
                             </div>
                         </div>
 
@@ -156,12 +161,12 @@
                         <div class="card-body">
                             <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-laptop-code me-2"></i> Desarrollo Web y Lógica</h4>
                             <ul class="list-unstyled icon-list">
-                                <li><i class="fa-brands fa-python"></i> <span><strong>Python & Java (POO)</strong></span></li>
-                                <li><i class="fa-solid fa-microchip"></i> <span><strong>C++</strong> (Arduino / Microcontroladores)</span></li>
-                                <li><i class="fa-brands fa-html5"></i> <span><strong>HTML5 & CSS3</strong></span></li>
-                                <li><i class="fa-brands fa-js"></i> <span><strong>JavaScript</strong></span></li>
-                                <li><i class="fa-brands fa-php"></i> <span><strong>PHP</strong></span></li>
-                                <li><i class="fa-brands fa-bootstrap"></i> <span><strong>Bootstrap 5</strong></span></li>
+                                <li><i class="fa-brands fa-java"></i> <span><strong>Java & Python</strong> <span class="text-muted">(POO / Backend)</span></span></li>
+                                <li><i class="fa-solid fa-microchip"></i> <span><strong>C++</strong> <span class="text-muted">(Hardware / Arduino)</span></span></li>
+                                <li><i class="fa-brands fa-html5"></i> <span><strong>HTML5 & CSS3</strong> <span class="text-muted">(Diseño UI)</span></span></li>
+                                <li><i class="fa-brands fa-js"></i> <span><strong>JavaScript</strong> <span class="text-muted">(React / Frontend)</span></span></li>
+                                <li><i class="fa-brands fa-php"></i> <span><strong>PHP</strong> <span class="text-muted">(Lógica de servidor)</span></span></li>
+                                <li><i class="fa-brands fa-bootstrap"></i> <span><strong>Bootstrap 5</strong> <span class="text-muted">(Maquetación)</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -172,11 +177,12 @@
                         <div class="card-body">
                             <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-server me-2"></i> Datos e Infraestructura</h4>
                             <ul class="list-unstyled icon-list">
-                                <li><i class="fa-solid fa-database"></i> <span><strong>SQL</strong> (MySQL, PostgreSQL)</span></li>
-                                <li><i class="fa-solid fa-leaf text-muted"></i> <span><span class="text-muted">MongoDB</span> <span class="badge bg-secondary rounded-pill ms-1" style="font-size: 0.7em;">En desarrollo</span></span></li>
-                                <li><i class="fa-brands fa-linux"></i> <span><strong>Linux</strong> (Bash / Terminal)</span></li>
-                                <li><i class="fa-solid fa-network-wired text-muted"></i> <span><span class="text-muted">Nginx Proxy Manager</span> <span class="badge bg-secondary rounded-pill ms-1" style="font-size: 0.7em;">En desarrollo</span></span></li>
-                                <li><i class="fa-brands fa-git-alt"></i> <span><strong>Git & GitHub</strong></span></li>
+                                <li><i class="fa-solid fa-database"></i> <span><strong>SQL</strong> <span class="text-muted">(MySQL / PostgreSQL)</span></span></li>
+                                <li><i class="fa-solid fa-leaf"></i> <span><strong>MongoDB</strong> <span class="text-muted">(NoSQL)</span></span></li>
+                                <li><i class="fa-solid fa-share-nodes"></i> <span><strong>Neo4j</strong> <span class="text-muted">(BDOG / Cypher)</span></span></li>
+                                <li><i class="fa-brands fa-linux"></i> <span><strong>Linux</strong> <span class="text-muted">(WSL / Bash)</span></span></li>
+                                <li><i class="fa-solid fa-network-wired"></i> <span><strong>Nginx</strong> <span class="text-muted">(Proxy Manager)</span></span></li>
+                                <li><i class="fa-brands fa-git-alt"></i> <span><strong>Git & GitHub</strong> <span class="text-muted">(Control de versiones)</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -187,11 +193,11 @@
                         <div class="card-body">
                             <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-lightbulb me-2"></i> Gestión y Liderazgo</h4>
                             <ul class="list-unstyled icon-list">
-                                <li><i class="fa-solid fa-people-arrows"></i> <span><strong>Agile / Scrum</strong></span></li>
-                                <li><i class="fa-solid fa-pen-nib"></i> <span><strong>Design Thinking</strong></span></li>
-                                <li><i class="fa-solid fa-users-gear"></i> <span><strong>Liderazgo y Gestión</strong> de equipos</span></li>
-                                <li><i class="fa-solid fa-comments"></i> <span><strong>Comunicación efectiva</strong> y resolución de problemas</span></li>
-                                <li><i class="fa-brands fa-microsoft"></i> <span><strong>Office 365 & Teams</strong></span></li>
+                                <li><i class="fa-solid fa-people-arrows"></i> <span><strong>Agile / Scrum</strong> <span class="text-muted">(Iteración)</span></span></li>
+                                <li><i class="fa-solid fa-pen-nib"></i> <span><strong>Design Thinking</strong> <span class="text-muted">(UX / Producto)</span></span></li>
+                                <li><i class="fa-solid fa-users-gear"></i> <span><strong>Liderazgo</strong> <span class="text-muted">(Gestión de equipos)</span></span></li>
+                                <li><i class="fa-solid fa-comments"></i> <span><strong>Comunicación</strong> <span class="text-muted">(Relaciones públicas)</span></span></li>
+                                <li><i class="fa-brands fa-microsoft"></i> <span><strong>Office 365 & Teams</strong> <span class="text-muted">(Colaboración)</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -205,41 +211,67 @@
             <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Proyectos Destacados</h2>
             
             <div class="row g-4">
-                <div class="col-lg-4">
+                
+                <div class="col-lg-6">
                     <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-gas-pump" style="color: var(--color-acento);"></i> Red Faucet</h4>
-                            <h6 class="card-subtitle mb-3 text-muted">Gestión de Combustible</h6>
-                            <p class="card-text">Sistema enfocado en el monitoreo de gastos vehiculares. Diseñado con un enfoque primordial en la experiencia del usuario (UI/UX) y respaldado por una estructura robusta en bases de datos relacionales.</p>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-mug-hot" style="color: var(--color-acento);"></i> Coffee Cat</h4>
+                                <a href="#" target="_blank" class="text-muted text-decoration-none" title="Ver Repositorio"><i class="fa-brands fa-github fs-5"></i></a>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-muted">E-commerce / Full-Stack</h6>
+                            <p class="card-text">Simulación completa de una plataforma de venta en línea. Desarrollo de la arquitectura desde cero, implementando autenticación de usuarios, gestión de sesiones, diferenciación de roles (cliente/administrador) y paneles de control.</p>
                             <hr>
-                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> SQL, UI/UX, Java</small></p>
+                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> PHP, SQL, JavaScript, HTML/CSS</small></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-robot" style="color: var(--color-acento);"></i> Ecosistema Arduino</h4>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-gem" style="color: var(--color-acento);"></i> Blue Lion</h4>
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary">Fase de Arquitectura</span>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-muted">Gestión de Programa de Liderazgo</h6>
+                            <p class="card-text">Aplicación a medida para la administración interna de comités y participantes. El trabajo actual abarca el levantamiento de requerimientos, diseño de bases de datos, planificación de control de accesos basados en roles y documentación técnica para su presentación y aprobación directiva.</p>
+                            <hr>
+                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> Arquitectura de Software, UI/UX, Presentación Técnica</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-gas-pump" style="color: var(--color-acento);"></i> Red Faucet</h4>
+                                <span class="badge bg-warning bg-opacity-10 text-warning border border-warning">En pausa / Rediseño</span>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-muted">Gestión de Combustible</h6>
+                            <p class="card-text">Sistema de monitoreo de gastos vehiculares con enfoque en la experiencia de usuario. El proyecto se encuentra actualmente pausado por una reestructuración estratégica de la base de datos relacional y migración de la lógica del servidor para mejorar su escalabilidad.</p>
+                            <hr>
+                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> SQL, Java, UI/UX</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-microchip" style="color: var(--color-acento);"></i> Ecosistema Arduino</h4>
+                                <a href="#" target="_blank" class="text-muted text-decoration-none" title="Ver Código"><i class="fa-brands fa-github fs-5"></i></a>
+                            </div>
                             <h6 class="card-subtitle mb-3 text-muted">Automatización y Hardware</h6>
-                            <p class="card-text">Colección de diversas implementaciones orientadas a la resolución de problemas electrónicos. Destaca la capacidad de optimizar código para operar bajo recursos de hardware limitados.</p>
+                            <p class="card-text">Colección de implementaciones orientadas a la resolución de problemas electrónicos. El enfoque principal del proyecto es la estructuración de lógica de bajo nivel y la escritura de código altamente optimizado para operar bajo restricciones severas de memoria y procesamiento.</p>
                             <hr>
                             <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> C++, Arduino IDE, Electrónica</small></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-paw" style="color: var(--color-acento);"></i> Segundos Ladridos</h4>
-                            <h6 class="card-subtitle mb-3 text-muted">Plataforma Web</h6>
-                            <p class="card-text">Desarrollo web que une la tecnología con el bienestar animal. Aplica metodologías de negocios y Design Thinking para estructurar una solución digital empática y escalable.</p>
-                            <hr>
-                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> PHP, JavaScript, Design Thinking</small></p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -250,38 +282,15 @@
             
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm mb-4 hover-efecto" style="background-color: var(--color-fondo); border-left: 5px solid var(--color-acento) !important;">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
-                                <h4 class="card-title mb-0" style="color: var(--color-oscuro);">Desarrollador Back-End</h4>
-                                <span class="badge mt-2 mt-md-0" style="background-color: var(--color-acento); font-size: 0.9rem;">Nov 2025 – Actualidad</span>
-                            </div>
-                            <h6 class="card-subtitle mb-4 text-muted"><i class="fa-solid fa-laptop-code me-2"></i> Proyecto Independiente de Software</h6>
-                            <ul class="list-unstyled icon-list mb-0">
-                                <li class="align-items-start mb-3">
-                                    <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
-                                    <span>Desarrollo de la lógica y arquitectura de bases de datos para una aplicación enfocada en el control y análisis de gastos de combustible automotriz.</span>
-                                </li>
-                                <li class="align-items-start mb-3">
-                                    <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
-                                    <span>Traducción de necesidades de negocio y consumo de usuarios en funcionalidades técnicas, aplicando conceptos de emprendimiento para asegurar la viabilidad del proyecto.</span>
-                                </li>
-                                <li class="align-items-start">
-                                    <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
-                                    <span><strong>Tecnologías aplicadas:</strong> Diseño y gestión de bases de datos con SQL, y estructuración de la lógica de servidor para el procesamiento eficiente de la información.</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <!-- Tarjeta Única: Liderazgo en Genera -->
                     <div class="card border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo); border-left: 5px solid var(--color-acento) !important;">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
-                                <h4 class="card-title mb-0" style="color: var(--color-oscuro);">Coordinador y Staff</h4>
-                                <span class="badge mt-2 mt-md-0" style="background-color: var(--color-acento); font-size: 0.9rem;">2025 – Actualidad</span>
+                                <h4 class="card-title mb-0" style="color: var(--color-oscuro);">Asistente de Coordinación y Staff</h4>
+                                <span class="badge mt-2 mt-md-0" style="background-color: var(--color-acento); font-size: 0.9rem;">2025 – 2026</span>
                             </div>
                             <h6 class="card-subtitle mb-4 text-muted"><i class="fa-solid fa-users-viewfinder me-2"></i> Programa de Liderazgo Genera (Comité We Care)</h6>
-                            <ul class="list-unstyled icon-list mb-0">
+                            <ul class="list-unstyled icon-list mb-4">
                                 <li class="align-items-start mb-3">
                                     <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
                                     <span>Coordinación de iniciativas enfocadas en la salud física y mental dentro de la comunidad universitaria, gestionando la logística de actividades.</span>
@@ -295,6 +304,14 @@
                                     <span>Participación activa como staff en eventos de gran escala, asegurando la correcta ejecución logística (incluyendo los <em>300 líderes más influyentes de México</em>).</span>
                                 </li>
                             </ul>
+                            
+                            <!-- Botón de evidencia hacia LinkedIn -->
+                            <div class="text-end border-top pt-3 mt-2">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7370263897297088512/" target="_blank" class="btn btn-outline-custom btn-sm fw-bold">
+                                    <i class="fa-brands fa-linkedin me-2"></i> Ver evidencia en LinkedIn
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -317,11 +334,6 @@
                         Actualmente estoy explorando nuevas formas de expresión digital, adentrándome en el mundo de la edición audiovisual y musical. Es un espacio en constante construcción donde fusiono la tecnología con la narrativa.
                     </p>
 
-                    <div class="mt-4">
-                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--color-acento); font-size: 0.9rem;">
-                            <i class="fa-solid fa-hourglass-half me-1"></i> Portafolio creativo en construcción
-                        </span>
-                    </div>
                 </div>
 
                 <div class="col-lg-5 offset-lg-1">
@@ -340,6 +352,20 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="seccion-contacto" class="seccion-contacto-oscura py-5">
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="fw-bold">¿Trabajamos juntos?</h2>
+                    <p style="opacity: 0.8;">Si tienes un proyecto en mente o simplemente quieres saludar, envíame un mensaje.</p>
+                </div>
+            </div>
+            <!-- Aquí es donde React cobrará vida -->
+            <div id="react-contact-root"></div>
         </div>
     </section>
 
@@ -368,13 +394,13 @@
                     <h5 class="mb-3" style="color: var(--color-acento);">Contacto</h5>
                     
                     <div class="d-flex flex-column gap-3">
-                        <a href="#inicio" onclick="copiarContacto('email')" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                        <a href="#inicio" onclick="copiarContacto('email'); event.preventDefault();" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                             <i class="fa-solid fa-envelope me-2"></i> Envíame un correo
                         </a>
                         <a href="https://www.linkedin.com/in/diego-fuentes-rubí/" target="_blank" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                             <i class="fa-brands fa-linkedin me-2"></i> LinkedIn
                         </a>
-                        <a href="#" target="_blank" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                        <a href="https://github.com/FuentesRD" target="_blank" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                             <i class="fa-brands fa-github me-2"></i> GitHub
                         </a>
                     </div>
@@ -406,5 +432,120 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- React y ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <!-- Babel para compilar JSX en el navegador -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        function ContactForm() {
+            const [status, setStatus] = React.useState("");
+            // Estado para controlar qué opción del selector se eligió
+            const [asunto, setAsunto] = React.useState("");
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const data = new FormData(form);
+                
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        setStatus("SUCCESS");
+                        form.reset();
+                        setAsunto("");
+                    } else {
+                        setStatus("ERROR");
+                    }
+                });
+            }
+
+            if (status === "SUCCESS") {
+                return (
+                    <div className="row justify-content-center">
+                        <div className="col-md-8 text-center">
+                            {/* Alerta de éxito integrada al diseño, sin el fondo verde chillón */}
+                            <div className="p-4 mb-4" style={{ border: '1px solid currentColor', borderRadius: '10px' }}>
+                                <h4 className="fw-bold"><i className="fa-solid fa-circle-check"></i> ¡Mensaje enviado!</h4>
+                                <p className="mb-0">Gracias por escribirme. Revisaré tu mensaje y te responderé lo más pronto posible.</p>
+                            </div>
+                            {/* AQUÍ: Pondremos la clase de tu botón personalizado */}
+                            <button className="btn btn-custom" onClick={() => setStatus("")}>Enviar otro mensaje</button>
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="row justify-content-center">
+                    <div className="col-md-10 col-lg-8">
+                        {status === "ERROR" && <div className="alert alert-danger">Hubo un problema al enviar el mensaje. Intenta de nuevo.</div>}
+                        
+                        {/* Quitamos bg-light y card para que se fusione con el fondo, y agregamos una clase custom */}
+                        <form onSubmit={handleSubmit} action="https://formspree.io/f/mqevzjbo" method="POST" className="custom-contact-form">
+                            <div className="row">
+                                <div className="col-md-6 mb-3">
+                                    <label className="form-label fw-bold">Nombre</label>
+                                    <input type="text" name="name" className="form-control custom-input" placeholder="Tu nombre" required />
+                                </div>
+                                <div className="col-md-6 mb-3">
+                                    <label className="form-label fw-bold">Correo Electrónico</label>
+                                    <input type="email" name="email" className="form-control custom-input" placeholder="nombre@ejemplo.com" required />
+                                </div>
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label fw-bold">Asunto</label>
+                                <select 
+                                    // Si elige "Otro", este select cambia de nombre para que el input de texto tome el protagonismo
+                                    name={asunto === "Otro" ? "subject_category" : "subject"} 
+                                    className="form-select custom-input" 
+                                    required 
+                                    value={asunto}
+                                    onChange={(e) => setAsunto(e.target.value)}
+                                >
+                                    <option value="" disabled>Selecciona una opción...</option>
+                                    <option value="Desarrollo de un sitio web">Desarrollo de un sitio web</option>
+                                    <option value="Desarrollo de una aplicación">Desarrollo de una aplicación</option>
+                                    <option value="Consulta sobre precios">Consulta sobre precios</option>
+                                    <option value="Otro">Otro (Especificar)</option>
+                                </select>
+                            </div>
+                            
+                            {/* Renderizado condicional: Solo aparece si eligen "Otro" */}
+                            {asunto === "Otro" && (
+                                <div className="mb-3">
+                                    <label className="form-label fw-bold">Especifica tu asunto</label>
+                                    <input type="text" name="subject" className="form-control custom-input" placeholder="Escribe el asunto" required />
+                                </div>
+                            )}
+
+                            <div className="mb-4">
+                                <label className="form-label fw-bold">Mensaje</label>
+                                <textarea name="message" className="form-control custom-input" rows="4" placeholder="¿Quieres detallar más tu asunto o especificar más la consulta? Escribe aquí..." required></textarea>
+                            </div>
+                            
+                            {/* AQUÍ: Cambiamos btn-primary por tu clase custom */}
+                            <div className="text-end">
+                                <button type="submit" className="btn btn-custom px-5 py-2 fw-bold">
+                                    <i className="fa-solid fa-paper-plane me-2"></i> Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            );
+        }
+
+        // Inicializar React en el div que creamos en el HTML
+        const rootElement = document.getElementById('react-contact-root');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<ContactForm />);
+    </script>
+
 </body>
 </html>

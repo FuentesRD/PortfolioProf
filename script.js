@@ -3,7 +3,9 @@
         const usuarioCorreo = "ddfrubi15"; 
         const dominioCorreo = "gmail.com";
         const lada = "+52 ";
-        const numeroTel = "55 5463 6710"; 
+        const telParte1 = "55 5463 ";
+        const telParte2 = "6710";
+        const numeroTel = telParte1 + telParte2; 
 
         let textoACopiar = "";
         let mensajeToast = "";
@@ -35,6 +37,22 @@
         }, 3000);
     }
 
+    function abrirWhatsApp() {
+        const telParte1 = "55 5463 ";
+        const telParte2 = "6710";
+        // Usas las variables que ya tienes ofuscadas de la Fase 1
+        const miTelefono = telParte1 + telParte2; 
+        
+        // Le quitamos los espacios al número para que la URL funcione bien
+        const numeroLimpio = miTelefono.replace(/\s+/g, ''); 
+        
+        // El mensaje predeterminado
+        const mensaje = "Hola Diego, vi tu portafolio y me gustaría platicar contigo sobre un proyecto.";
+        
+        // Creamos el link oficial de WhatsApp y lo abrimos en otra pestaña
+        const url = `https://wa.me/${numeroLimpio}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    }
 // =========================================
 // CONFIGURACIÓN DE EFECTO MÁQUINA DE ESCRIBIR (Typed.js)
 // =========================================
@@ -52,7 +70,7 @@ new Typed('#typed-hook', optionsHook);
 
 // 2. Poema (Lado Creativo) - Inicia al hacer Scroll
 const stringsPoema = [
-    '"Confía en tu ser<br>Que mañana puede cambiar<br>Aprecia cada amanecer<br>Y haz realidad lo que vayas a desear"'
+    '"Confía en tu ser<br>Que mañana puede cambiar<br>Aprecia cada amanecer<br>Y has realidad lo que vayas a desear"'
 ];
 
 const optionsPoema = {

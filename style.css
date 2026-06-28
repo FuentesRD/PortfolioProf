@@ -192,3 +192,70 @@ h1, h2, h3 {
         0 0 5px rgba(92, 135, 157, 0.5),  /* Luz interna sutil */
         0 0 15px rgba(92, 135, 157, 0.8); /* Glow externo más fuerte */
 }
+
+/* =========================================
+   SECCIÓN DE CONTACTO Y FORMULARIO (REACT)
+   ========================================= */
+.seccion-contacto-oscura {
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+    /* Patrón de hexágonos con trazo blanco al 5% de opacidad para dar textura */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='104' viewBox='0 0 60 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 104L0 86.6V52L30 34.6l30 17.4v34.6L30 104zm0-69.4L0 17.3V-17.3l30-17.3 30 17.3v34.6L30 34.6z' fill='none' stroke='%23ffffff' stroke-width='1' stroke-opacity='0.05'/%3E%3C/svg%3E");
+    position: relative;
+}
+
+/* Forzamos que las etiquetas y textos usen el color blanco */
+.custom-contact-form label {
+    color: var(--color-blanco);
+    letter-spacing: 0.5px;
+}
+
+/* Diseño de los inputs (cajas de texto) estilo "Cristal" */
+.custom-contact-form .custom-input {
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo casi transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco sutil */
+    color: var(--color-blanco);
+}
+
+/* Efecto al hacer clic en un input para escribir */
+.custom-contact-form .custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-acento); /* Brilla con tu color Azul Pizarra */
+    color: var(--color-blanco);
+    box-shadow: 0 0 0 0.25rem rgba(92, 135, 157, 0.25);
+}
+
+/* Color del texto de pista (placeholder) */
+.custom-contact-form .custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Arreglo para que las opciones del <select> no se vean invisibles */
+.custom-contact-form select option {
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+}
+
+/* =========================================
+   FOTO DE PERFIL (HERO) - ESTILO BLOB FIJO
+   ========================================= */
+.hero-profile-img {
+    width: 100%;
+    /* Aumentamos el tamaño de 320px a 400px para que tenga más presencia en PC */
+    max-width: 400px; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    
+    /* Dejamos fija la segunda forma (la que te gustó más) */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    
+    box-shadow: 0 10px 25px rgba(51, 117, 104, 0.15);
+    
+    /* Ahora la transición SOLO aplica para el movimiento (transform), no para la forma */
+    transition: transform 0.4s ease;
+}
+
+/* Efecto interactivo al pasar el mouse: Solo hace el zoom */
+.hero-profile-img:hover {
+    transform: scale(1.05); 
+}
