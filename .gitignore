@@ -1,0 +1,3 @@
+# Ignorar metadatos de Windows y macOS
+*:Zone.Identifier
+.DS_Store
