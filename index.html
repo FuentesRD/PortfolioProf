@@ -175,57 +175,89 @@
         </div>
     </section>
 
-    <section id="habilidades" class="py-5" style="background-color: var(--color-blanco);">
+            <section id="habilidades" class="py-5" style="background-color: var(--color-blanco);">
         <div class="container">
-            <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Mi Stack y Habilidades</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
-                        <div class="card-body">
-                            <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-laptop-code me-2"></i> Desarrollo Web y Lógica</h4>
-                            <ul class="list-unstyled icon-list">
-                                <li><i class="fa-brands fa-java"></i> <span><strong>Java & Python</strong> <span class="text-muted">(POO / Backend)</span></span></li>
-                                <li><i class="fa-solid fa-microchip"></i> <span><strong>C++</strong> <span class="text-muted">(Hardware / Arduino)</span></span></li>
-                                <li><i class="fa-brands fa-html5"></i> <span><strong>HTML5 & CSS3</strong> <span class="text-muted">(Diseño UI)</span></span></li>
-                                <li><i class="fa-brands fa-js"></i> <span><strong>JavaScript</strong> <span class="text-muted">(React / Frontend)</span></span></li>
-                                <li><i class="fa-brands fa-php"></i> <span><strong>PHP</strong> <span class="text-muted">(Lógica de servidor)</span></span></li>
-                                <li><i class="fa-brands fa-bootstrap"></i> <span><strong>Bootstrap 5</strong> <span class="text-muted">(Maquetación)</span></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="text-center mb-2" style="color: var(--color-oscuro);">Mi Stack y Habilidades</h2>
+            <!-- Leyenda de los puntitos -->
+            <p class="text-center text-muted mb-5 small">
+                <span class="text-nowrap me-3"><span class="dot-prod me-1"></span> En uso en un sistema en producción</span>
+                <span class="text-nowrap"><span class="dot-web me-1"></span> Usado en esta web</span>
+            </p>
 
-                <div class="col-md-6 col-lg-4">
+            <!-- 4 tarjetas en cuadrícula 2x2 (en celular se apilan) -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- TARJETA 1: BACKEND -->
+                <div class="col-md-6 col-xl-5">
                     <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
-                        <div class="card-body">
-                            <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-server me-2"></i> Datos e Infraestructura</h4>
-                            <ul class="list-unstyled icon-list">
-                                <li><i class="fa-solid fa-database"></i> <span><strong>SQL</strong> <span class="text-muted">(MySQL / PostgreSQL)</span></span></li>
-                                <li><i class="fa-solid fa-leaf"></i> <span><strong>MongoDB</strong> <span class="text-muted">(NoSQL)</span></span></li>
-                                <li><i class="fa-solid fa-share-nodes"></i> <span><strong>Neo4j</strong> <span class="text-muted">(BDOG / Cypher)</span></span></li>
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-server me-2"></i> Backend y Arquitectura</h4>
+                            <ul class="list-unstyled icon-list mb-0">
+                                <li><i class="fa-brands fa-java"></i> <span><strong>Java 21 &amp; Spring Boot</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(APIs REST)</span></span></li>
+                                <li><i class="fa-solid fa-sitemap"></i> <span><strong>Arquitectura MVC</strong> <span class="text-muted">(Diseño en capas)</span></span></li>
+                                <li><i class="fa-solid fa-shield-halved"></i> <span><strong>Autenticación JWT</strong> <span class="text-muted">(Acceso por roles)</span></span></li>
+                                <li><i class="fa-brands fa-docker"></i> <span><strong>Docker &amp; Nginx</strong> <span class="text-muted">(Contenedores / Proxy)</span></span></li>
                                 <li><i class="fa-brands fa-linux"></i> <span><strong>Linux</strong> <span class="text-muted">(WSL / Bash)</span></span></li>
-                                <li><i class="fa-solid fa-network-wired"></i> <span><strong>Nginx</strong> <span class="text-muted">(Proxy Manager)</span></span></li>
-                                <li><i class="fa-brands fa-git-alt"></i> <span><strong>Git & GitHub</strong> <span class="text-muted">(Control de versiones)</span></span></li>
+                                <li><i class="fa-brands fa-php"></i> <span><strong>PHP</strong> <span class="text-muted">(Lógica de servidor)</span></span></li>
+                                <li><i class="fa-brands fa-python"></i> <span><strong>Python &amp; C++</strong> <span class="text-muted">(Scripting / Arduino)</span></span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <!-- TARJETA 2: FRONTEND Y MOBILE -->
+                <div class="col-md-6 col-xl-5">
                     <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
-                        <div class="card-body">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-laptop-code me-2"></i> Frontend y Mobile</h4>
+                            <ul class="list-unstyled icon-list mb-0">
+                                <li><i class="fa-brands fa-react"></i> <span><strong>React</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(Aplicaciones web)</span></span></li>
+                                <li><i class="fa-solid fa-mobile-screen-button"></i> <span><strong>React Native &amp; Expo</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(Apps móviles)</span></span></li>
+                                <li><i class="fa-brands fa-js"></i> <span><strong>JavaScript</strong><span class="dot-web" title="Usado en esta web"><span class="visually-hidden">(usado en esta web)</span></span> <span class="text-muted">(ES6+)</span></span></li>
+                                <li><i class="fa-brands fa-html5"></i> <span><strong>HTML5 &amp; CSS3</strong><span class="dot-web" title="Usado en esta web"><span class="visually-hidden">(usado en esta web)</span></span> <span class="text-muted">(Diseño UI)</span></span></li>
+                                <li><i class="fa-brands fa-bootstrap"></i> <span><strong>Bootstrap 5</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span><span class="dot-web" title="Usado en esta web"><span class="visually-hidden">(usado en esta web)</span></span> <span class="text-muted">(Maquetación responsiva)</span></span></li>
+                                <li><i class="fa-solid fa-wind"></i> <span><strong>Tailwind CSS</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(Estilos utilitarios)</span></span></li>
+                                <li><i class="fa-solid fa-paper-plane"></i> <span><strong>Formspree</strong><span class="dot-web" title="Usado en esta web"><span class="visually-hidden">(usado en esta web)</span></span> <span class="text-muted">(Formularios de contacto)</span></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3: DATOS Y CLOUD -->
+                <div class="col-md-6 col-xl-5">
+                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-cloud me-2"></i> Datos y Cloud</h4>
+                            <ul class="list-unstyled icon-list mb-0">
+                                <li><i class="fa-solid fa-leaf"></i> <span><strong>MongoDB Atlas</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(NoSQL)</span></span></li>
+                                <li><i class="fa-solid fa-database"></i> <span><strong>SQL</strong> <span class="text-muted">(MySQL / PostgreSQL)</span></span></li>
+                                <li><i class="fa-solid fa-share-nodes"></i> <span><strong>Neo4j</strong> <span class="text-muted">(Grafos / Cypher)</span></span></li>
+                                <li><i class="fa-brands fa-google"></i> <span><strong>Google Cloud</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(Cloud Run / Storage)</span></span></li>
+                                <li><i class="fa-brands fa-cloudflare"></i> <span><strong>Cloudflare Pages</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(Hosting web)</span></span></li>
+                                <li><i class="fa-solid fa-images"></i> <span><strong>Cloudinary</strong><span class="dot-prod" title="En producción"><span class="visually-hidden">(en producción)</span></span> <span class="text-muted">(Presets / Optimización)</span></span></li>
+                                <li><i class="fa-brands fa-github"></i> <span><strong>Git &amp; GitHub</strong><span class="dot-web" title="Usado en esta web"><span class="visually-hidden">(usado en esta web)</span></span> <span class="text-muted">(Versiones / GitHub Pages)</span></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 4: GESTIÓN -->
+                <div class="col-md-6 col-xl-5">
+                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
+                        <div class="card-body p-4">
                             <h4 class="card-title mb-4" style="color: var(--color-acento);"><i class="fa-solid fa-lightbulb me-2"></i> Gestión y Liderazgo</h4>
-                            <ul class="list-unstyled icon-list">
+                            <ul class="list-unstyled icon-list mb-0">
+                                <li><i class="fa-solid fa-arrows-spin"></i> <span><strong>Lean</strong> <span class="text-muted">(Producto / MVP)</span></span></li>
                                 <li><i class="fa-solid fa-people-arrows"></i> <span><strong>Agile / Scrum</strong> <span class="text-muted">(Iteración)</span></span></li>
                                 <li><i class="fa-solid fa-pen-nib"></i> <span><strong>Design Thinking</strong> <span class="text-muted">(UX / Producto)</span></span></li>
                                 <li><i class="fa-solid fa-users-gear"></i> <span><strong>Liderazgo</strong> <span class="text-muted">(Gestión de equipos)</span></span></li>
                                 <li><i class="fa-solid fa-comments"></i> <span><strong>Comunicación</strong> <span class="text-muted">(Relaciones públicas)</span></span></li>
-                                <li><i class="fa-brands fa-microsoft"></i> <span><strong>Office 365 & Teams</strong> <span class="text-muted">(Colaboración)</span></span></li>
+                                <li><i class="fa-brands fa-microsoft"></i> <span><strong>Office 365 &amp; Teams</strong> <span class="text-muted">(Colaboración)</span></span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

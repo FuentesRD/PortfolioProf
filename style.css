@@ -386,3 +386,42 @@ h1, h2, h3 {
 .icon-list i {
     flex-shrink: 0;
 }
+
+/* =========================================
+   STACK: PUNTITOS INDICADORES
+   Verde = en uso en un sistema en producción
+   Azul  = usado para construir esta web
+   ========================================= */
+.dot-prod,
+.dot-web {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 6px;
+    margin-right: 3px;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.dot-prod {
+    background-color: #2fa36b;
+    box-shadow: 0 0 0 3px rgba(47, 163, 107, 0.18);
+}
+
+.dot-web {
+    background-color: #4f8fc0;
+    box-shadow: 0 0 0 3px rgba(79, 143, 192, 0.2);
+}
+
+/* Si un elemento lleva los dos puntitos, que no queden pegados */
+.dot-prod + .dot-web {
+    margin-left: 5px;
+}
+
+/* En la leyenda el puntito va antes del texto, así que no necesita margen izquierdo */
+p .dot-prod.me-1,
+p .dot-web.me-1 {
+    margin-left: 0;
+}
