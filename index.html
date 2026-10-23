@@ -56,8 +56,8 @@
                     <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#habilidades">Stack</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#lado-creativo">Intereses</a></li>
                     <li class="nav-item"><a class="nav-link" href="#seccion-contacto">Contacto</a></li>
                 </ul>
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="col-lg-5 order-1 order-lg-2 text-center">
-                    <img src="assets/Pfp.jpeg" alt="Diego Fuentes Rubí" class="hero-profile-img hover-efecto">
+                    <img src="assets/Pfp.webp" alt="Diego Fuentes Rubí" class="hero-profile-img hover-efecto" width="400" height="400" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -230,18 +230,122 @@
         </div>
     </section>
 
-    <section id="proyectos" class="py-5" style="background-color: var(--color-fondo);">
+    <!-- =========================================
+    EXPERIENCIA PROFESIONAL (ahora va ANTES de Proyectos)
+    ========================================= -->
+    <section id="experiencia" class="py-5 patron-hex" style="background-color: var(--color-fondo);">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Experiencia Profesional</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <!-- Una tarjeta por organización; dentro, cada rol por separado (estilo LinkedIn) -->
+                    <div class="card border-0 shadow-sm exp-card" style="background-color: var(--color-blanco);">
+                        <div class="card-body p-4 p-md-5">
+
+                            <!-- Encabezado de la organización -->
+                            <div class="mb-4">
+                                <h3 class="mb-1" style="color: var(--color-oscuro);">Programa de Liderazgo Genera</h3>
+                                <p class="text-muted mb-0"><i class="fa-solid fa-building-columns me-2"></i>Universidad Anáhuac México</p>
+                            </div>
+
+                            <!-- ROL 1: Desarrollo -->
+                            <div class="exp-rol">
+                                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                    <h4 class="exp-rol-titulo mb-0">Desarrollador Full-Stack · Servicio Social</h4>
+                                    <span class="badge exp-fecha">Mar 2026 – Presente</span>
+                                </div>
+                                <p class="exp-rol-sub mb-3">
+                                    <i class="fa-solid fa-gem me-2"></i>Proyecto Blue Lion
+                                    <span class="exp-estado ms-2"><span class="exp-punto-vivo"></span>v1.0 en despliegue</span>
+                                </p>
+
+                                <!-- Descripción: QUÉ es y para qué sirve -->
+                                <p class="exp-descripcion">Como desarrollador del Programa Genera, construí la plataforma digital con la que el programa gestiona su operación diaria: inscripción a eventos, seguimiento del progreso de los alumnos, consulta de su información clave y publicación de comunicados y avisos, a través de una app para alumnos y un panel web para coordinadores.</p>
+
+                                <!-- Puntos: CÓMO lo hice y qué logré -->
+                                <ul class="list-unstyled icon-list mb-4">
+                                    <li class="align-items-start mb-3">
+                                        <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i>
+                                        <span>Diseñé la arquitectura del ecosistema completo: una API REST con Spring Boot (Java 21) y MongoDB Atlas que alimenta una app móvil en React Native / Expo y un panel web en React.</span>
+                                    </li>
+                                    <li class="align-items-start mb-3">
+                                        <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i>
+                                        <span>Digitalicé el control de asistencia con gafete QR, la inscripción a talleres y un sistema de puntos de inactividad para más de 220 alumnos y 6 comités.</span>
+                                    </li>
+                                    <li class="align-items-start mb-3">
+                                        <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i>
+                                        <span>Implementé autenticación JWT con control de acceso por rol, gestión de imágenes con Cloudinary y despliegue en Google Cloud Run y Cloudflare Pages, con respaldos en Cloud Storage.</span>
+                                    </li>
+                                    <li class="align-items-start">
+                                        <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i>
+                                        <span>Gestioné el producto de principio a fin con enfoque Lean: levantamiento de requerimientos con coordinación, roadmap por fases y priorización del MVP.</span>
+                                    </li>
+                                </ul>
+
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="chip-tech">Java 21</span>
+                                    <span class="chip-tech">Spring Boot</span>
+                                    <span class="chip-tech">MongoDB Atlas</span>
+                                    <span class="chip-tech">React</span>
+                                    <span class="chip-tech">React Native</span>
+                                    <span class="chip-tech">Google Cloud</span>
+                                    <span class="chip-tech">Cloudinary</span>
+                                    <span class="chip-tech">Lean</span>
+                                </div>
+                                <!-- Aquí irá después el botón "Ver caso de estudio" (página propia de Blue Lion) -->
+                            </div>
+
+                            <!-- ROL 2: Comité -->
+                            <div class="exp-rol">
+                                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                    <h4 class="exp-rol-titulo mb-0">Coordinador del Comité de Salud y Bienestar</h4>
+                                    <span class="badge exp-fecha">Ago 2025 – May 2026</span>
+                                </div>
+                                <p class="exp-rol-sub mb-3"><i class="fa-solid fa-heart-pulse me-2"></i>Comité We Care</p>
+
+                                <p class="exp-descripcion">Como co-coordinador del Comité de Salud y Bienestar (We Care), lideré y gestioné las iniciativas de bienestar para los miembros del programa de Liderazgo, Emprendimiento y Gestión de Negocios, con la misión de cultivar una comunidad resiliente y un ecosistema de apoyo integral que potenciara el alto rendimiento en el desafiante entorno del emprendimiento y los negocios.</p>
+
+                                <ul class="list-unstyled icon-list mb-3">
+                                    <li class="align-items-start mb-3">
+                                        <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i>
+                                        <span>Gestión de relaciones públicas y contacto directo con ponentes y líderes de alto impacto para eventos académicos y de liderazgo.</span>
+                                    </li>
+                                    <li class="align-items-start">
+                                        <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i>
+                                        <span>Participación activa como staff en eventos de gran escala, asegurando la correcta ejecución logística (incluyendo los <em>300 líderes más influyentes de México</em>).</span>
+                                    </li>
+                                </ul>
+
+                                <div class="text-end">
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7370263897297088512/" target="_blank" rel="noopener" class="btn btn-outline-custom btn-sm fw-bold">
+                                        <i class="fa-brands fa-linkedin me-2"></i> Ver evidencia en LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         PROYECTOS (ahora va DESPUÉS de Experiencia; fondo blanco y tarjetas crema)
+         ========================================= -->
+    <section id="proyectos" class="py-5" style="background-color: var(--color-blanco);">
         <div class="container">
             <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Proyectos Destacados</h2>
-            
+
             <div class="row g-4">
-                
+
                 <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
+                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-mug-hot" style="color: var(--color-acento);"></i> Coffee Cat</h4>
-                                <a href="https://github.com/FuentesRD/Coffee_Cat2" target="_blank" class="text-muted text-decoration-none" title="Ver Repositorio"><i class="fa-brands fa-github fs-5"></i></a>
+                                <a href="https://github.com/FuentesRD/Coffee_Cat2" target="_blank" rel="noopener" class="text-muted text-decoration-none" title="Ver Repositorio" aria-label="Ver repositorio de Coffee Cat en GitHub"><i class="fa-brands fa-github fs-5"></i></a>
                             </div>
                             <h6 class="card-subtitle mb-3 text-muted">E-commerce / Full-Stack</h6>
                             <p class="card-text">Simulación completa de una plataforma de venta en línea. Desarrollo de la arquitectura desde cero, implementando autenticación de usuarios, gestión de sesiones, diferenciación de roles (cliente/administrador) y paneles de control.</p>
@@ -252,22 +356,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-gem" style="color: var(--color-acento);"></i> Blue Lion</h4>
-                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary">Fase de Arquitectura</span>
-                            </div>
-                            <h6 class="card-subtitle mb-3 text-muted">Gestión de Programa de Liderazgo</h6>
-                            <p class="card-text">Aplicación a medida para la administración interna de comités y participantes. El trabajo actual abarca el levantamiento de requerimientos, diseño de bases de datos, planificación de control de accesos basados en roles y documentación técnica para su presentación y aprobación directiva.</p>
-                            <hr>
-                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> Arquitectura de Software, UI/UX, Presentación Técnica</small></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
+                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo);">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-gas-pump" style="color: var(--color-acento);"></i> Red Faucet</h4>
@@ -281,64 +370,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm hover-efecto" style="background-color: var(--color-blanco);">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h4 class="card-title" style="color: var(--color-oscuro);"><i class="fa-solid fa-microchip" style="color: var(--color-acento);"></i> Ecosistema Arduino</h4>
-                                <a href="#" target="_blank" class="text-muted text-decoration-none" title="Ver Código"><i class="fa-brands fa-github fs-5"></i></a>
-                            </div>
-                            <h6 class="card-subtitle mb-3 text-muted">Automatización y Hardware</h6>
-                            <p class="card-text">Colección de implementaciones orientadas a la resolución de problemas electrónicos. El enfoque principal del proyecto es la estructuración de lógica de bajo nivel y la escritura de código altamente optimizado para operar bajo restricciones severas de memoria y procesamiento.</p>
-                            <hr>
-                            <p class="card-text mb-0"><small class="text-muted"><i class="fa-solid fa-layer-group"></i> <strong>Stack:</strong> C++, Arduino IDE, Electrónica</small></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="experiencia" class="py-5" style="background-color: var(--color-blanco);">
-        <div class="container">
-            <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Experiencia Profesional</h2>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <!-- Tarjeta Única: Liderazgo en Genera -->
-                    <div class="card border-0 shadow-sm hover-efecto" style="background-color: var(--color-fondo); border-left: 5px solid var(--color-acento) !important;">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
-                                <h4 class="card-title mb-0" style="color: var(--color-oscuro);">Asistente de Coordinación y Staff</h4>
-                                <span class="badge mt-2 mt-md-0" style="background-color: var(--color-acento); font-size: 0.9rem;">2025 – 2026</span>
-                            </div>
-                            <h6 class="card-subtitle mb-4 text-muted"><i class="fa-solid fa-users-viewfinder me-2"></i> Programa de Liderazgo Genera (Comité We Care)</h6>
-                            <ul class="list-unstyled icon-list mb-4">
-                                <li class="align-items-start mb-3">
-                                    <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
-                                    <span>Coordinación de iniciativas enfocadas en la salud física y mental dentro de la comunidad universitaria, gestionando la logística de actividades.</span>
-                                </li>
-                                <li class="align-items-start mb-3">
-                                    <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
-                                    <span>Gestión de relaciones públicas y contacto directo con ponentes y líderes de alto impacto para eventos académicos y de liderazgo.</span>
-                                </li>
-                                <li class="align-items-start">
-                                    <i class="fa-solid fa-angle-right mt-1" style="font-size: 0.9rem;"></i> 
-                                    <span>Participación activa como staff en eventos de gran escala, asegurando la correcta ejecución logística (incluyendo los <em>300 líderes más influyentes de México</em>).</span>
-                                </li>
-                            </ul>
-                            
-                            <!-- Botón de evidencia hacia LinkedIn -->
-                            <div class="text-end border-top pt-3 mt-2">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7370263897297088512/" target="_blank" class="btn btn-outline-custom btn-sm fw-bold">
-                                    <i class="fa-brands fa-linkedin me-2"></i> Ver evidencia en LinkedIn
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -409,8 +440,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#inicio" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Inicio</a></li>
                         <li class="mb-2"><a href="#habilidades" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Habilidades</a></li>
-                        <li class="mb-2"><a href="#proyectos" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Proyectos</a></li>
                         <li class="mb-2"><a href="#experiencia" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Experiencia</a></li>
+                        <li class="mb-2"><a href="#proyectos" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Proyectos</a></li>
                     </ul>
                 </div>
 
