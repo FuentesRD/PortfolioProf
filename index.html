@@ -18,6 +18,9 @@
     <meta property="og:description" content="Desarrollador Full-Stack y estudiante de Ingeniería en Sistemas. Construyendo lógica en el código y valor en los negocios. Conoce mi experiencia y proyectos.">
     <!-- IMAGEN PREVIA: Aquí debes poner la ruta a una imagen que se verá al compartir el link -->
     <meta property="og:image" content="https://diegofuentes.dev/assets/preview.jpg">
+    <meta property="og:image:alt" content="Diego Fuentes Rubí, desarrollador Full-Stack">
+    <meta property="og:site_name" content="Diego Fuentes Rubí">
+    <meta property="og:locale" content="es_MX">
 
     <!-- Twitter Cards (Para que se vea bien en X/Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +28,11 @@
     <meta name="twitter:title" content="Diego Fuentes Rubí | Desarrollador Full-Stack">
     <meta name="twitter:description" content="Desarrollador Full-Stack y estudiante de Ingeniería en Sistemas. Construyendo lógica en el código y valor en los negocios.">
     <meta name="twitter:image" content="https://diegofuentes.dev/assets/preview.jpg">
-
+    <meta name="twitter:image:alt" content="Diego Fuentes Rubí, desarrollador Full-Stack">
 
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="theme-color" content="#F2EBD5">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +44,32 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://diegofuentes.dev/" />
+
+    
+    <!-- Datos estructurados (JSON-LD): le dicen a Google quién eres y qué perfiles son tuyos.
+         No se ven en la página; solo los leen los buscadores. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Diego Fuentes Rubí",
+        "url": "https://diegofuentes.dev/",
+        "image": "https://diegofuentes.dev/assets/Pfp.webp",
+        "jobTitle": "Desarrollador Full-Stack",
+        "description": "Desarrollador Full-Stack y estudiante de Ingeniería en Sistemas y Tecnologías de la Información en la Universidad Anáhuac México.",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Anáhuac México"
+        },
+        "knowsAbout": ["Java", "Spring Boot", "React", "React Native", "MongoDB", "Google Cloud", "Desarrollo Full-Stack", "Desarrollo web"],
+        "knowsLanguage": ["es", "en", "it"],
+        "sameAs": [
+            "https://www.linkedin.com/in/diego-fuentes-rub%C3%AD/",
+            "https://github.com/FuentesRD"
+            "https://www.credly.com/users/diego-fuentes-rubi/badges/credly"
+        ]
+    }
+    </script>
 </head>
 <body>
 
@@ -48,7 +79,7 @@
                 <img src="favicon.png" alt="Logo Diego Fuentes" height="30" class="me-2">
                 Diego Fuentes
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -80,19 +111,19 @@
                     <div class="d-flex flex-wrap gap-3 mt-4">
                         <a href="#proyectos" class="btn btn-custom">Ver Proyectos</a>
                         
-                        <a href="https://github.com/FuentesRD" target="_blank" class="btn btn-outline-custom" title="Mi GitHub">
+                        <a href="https://github.com/FuentesRD" target="_blank" rel="noopener" class="btn btn-outline-custom" title="Mi GitHub" aria-label="Mi GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                         
-                        <a href="https://www.linkedin.com/in/diego-fuentes-rub%C3%AD/" target="_blank" class="btn btn-outline-custom" title="Mi perfil profesional">
+                        <a href="https://www.linkedin.com/in/diego-fuentes-rub%C3%AD/" target="_blank" rel="noopener" class="btn btn-outline-custom" title="Mi perfil de LinkedIn" aria-label="Mi perfil de LinkedIn">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
 
-                        <button onclick="copiarContacto('email')" class="btn btn-outline-custom" title="Copiar correo">
+                        <button type="button" onclick="copiarContacto('email')" class="btn btn-outline-custom" title="Copiar correo" aria-label="Copiar mi correo">
                             <i class="fa-solid fa-envelope"></i>
                         </button>
 
-                        <button onclick="abrirWhatsApp()" class="btn btn-outline-custom" title="Enviar Whatsapp">
+                        <button type="button" onclick="abrirWhatsApp()" class="btn btn-outline-custom" title="Enviar WhatsApp" aria-label="Enviarme un WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </button>
                     </div>
