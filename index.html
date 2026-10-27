@@ -58,6 +58,7 @@
                     <li class="nav-item"><a class="nav-link" href="#habilidades">Stack</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formacion">Formación</a></li>
                     <li class="nav-item"><a class="nav-link" href="#lado-creativo">Intereses</a></li>
                     <li class="nav-item"><a class="nav-link" href="#seccion-contacto">Contacto</a></li>
                 </ul>
@@ -104,7 +105,7 @@
         </div>
     </section>
 
-    <section id="sobre-mi" class="py-5" style="background-color: var(--color-fondo);">
+    <section id="sobre-mi" class="py-5 patron-hex" style="background-color: var(--color-fondo);">
         <div class="container">
             <div class="row g-4">
                 
@@ -409,9 +410,33 @@
     <!-- =========================================
                 FORMACIÓN COMPLEMENTARIA 
         ========================================= -->
-    <section id="formacion" class="py-5" style="background-color: var(--color-fondo);">
+    <section id="formacion" class="py-5 patron-hex" style="background-color: var(--color-fondo);">
         <div class="container">
-            <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Formación Complementaria</h2>
+                        <h2 class="text-center mb-5" style="color: var(--color-oscuro);">Formación</h2>
+
+            <!-- CARRERA (tarjeta principal, más grande) -->
+            <div class="card border-0 shadow-sm hover-efecto form-card carrera-card mb-5">
+                <div class="card-body p-4 p-md-5">
+                    <div class="d-md-flex align-items-center gap-4">
+                        <div class="form-icono carrera-icono mb-3 mb-md-0"><i class="fa-solid fa-building-columns"></i></div>
+
+                        <div class="flex-grow-1">
+                            <span class="form-tipo">Carrera</span>
+                            <h3 class="carrera-titulo">Ingeniería en Sistemas y Tecnologías de la Información</h3>
+                            <p class="form-emisor mb-0">Universidad Anáhuac México Norte</p>
+                        </div>
+
+                        <div class="carrera-fechas mt-3 mt-md-0">
+                            <span class="carrera-estado"><span class="exp-punto-vivo"></span>En curso</span>
+                            <p class="form-fecha mb-0 mt-2">Ago 2023 – Presente</p>
+                            <p class="carrera-egreso mb-0">Egreso esperado: Ago 2028</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subtítulo para separar la carrera de lo complementario -->
+            <h3 class="form-subtitulo text-center mb-4">Formación complementaria</h3>
 
             <div class="row g-4">
 
@@ -480,6 +505,13 @@
                 </div>
 
             </div>
+
+            <!-- Enlace discreto al perfil completo de Credly -->
+            <p class="text-center mt-4 mb-0">
+                <a href="https://www.credly.com/users/diego-fuentes-rubi/badges/credly" target="_blank" rel="noopener" class="form-link">
+                    Ver todas mis insignias en Credly <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+            </p>
         </div>
     </section>
 
@@ -551,6 +583,7 @@
                         <li class="mb-2"><a href="#habilidades" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Habilidades</a></li>
                         <li class="mb-2"><a href="#experiencia" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Experiencia</a></li>
                         <li class="mb-2"><a href="#proyectos" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Proyectos</a></li>
+                        <li class="mb-2"><a href="#formacion" class="text-decoration-none text-light" style="opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Formación</a></li>
                     </ul>
                 </div>
 
