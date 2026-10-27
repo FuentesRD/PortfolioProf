@@ -96,3 +96,95 @@ const observadorPoema = new IntersectionObserver((entries, observer) => {
 
 // Vigilar el contenedor del poema
 observadorPoema.observe(document.getElementById('typed-poema'));
+
+// =========================================
+// FORMULARIO DE CONTACTO (JavaScript simple, sin React)
+// =========================================
+const formContacto = document.getElementById('form-contacto');
+
+if (formContacto) {
+    const selectAsunto = document.getElementById('campo-asunto');
+    const grupoAsuntoOtro = document.getElementById('grupo-asunto-otro');
+    const selectPreferencia = document.getElementById('campo-preferencia');
+    const grupoTelefono = document.getElementById('grupo-telefono');
+    const grupoLinkedin = document.getElementById('grupo-linkedin');
+    const btnEnviar = document.getElementById('btn-enviar');
+    const textoOriginalBoton = btnEnviar.innerHTML;
+    const alertaError = document.getElementById('contacto-error');
+    const cajaExito = document.getElementById('contacto-exito');
+    const textoExito = document.getElementById('contacto-exito-texto');
+    const btnOtroMensaje = document.getElementById('btn-otro-mensaje');
+
+    // Cómo se nombra cada medio dentro del mensaje de éxito
+    const nombreMedio = {
+        'Correo electrónico': 'correo',
+        'WhatsApp': 'WhatsApp',
+        'Llamada telefónica': 'teléfono',
+        'LinkedIn': 'LinkedIn'
+    };
+
+    // Muestra u oculta un campo condicional.
+    // Si está oculto también se desactiva: así no se envía vacío ni bloquea el envío por ser "obligatorio".
+    function mostrarCampo(grupo, mostrar) {
+        const input = grupo.querySelector('input');
+        grupo.hidden = !mostrar;
+        input.disabled = !mostrar;
+        input.required = mostrar;
+        if (!mostrar) input.value = '';
+    }
+
+    // "Otro" en Asunto -> aparece el campo para escribir el asunto
+    selectAsunto.addEventListener('change', () => {
+        mostrarCampo(grupoAsuntoOtro, selectAsunto.value === 'Otro');
+    });
+
+    // WhatsApp o Llamada -> pide teléfono | LinkedIn -> pide perfil
+    selectPreferencia.addEventListener('change', () => {
+        const medio = selectPreferencia.value;
+        mostrarCampo(grupoTelefono, medio === 'WhatsApp' || medio === 'Llamada telefónica');
+        mostrarCampo(grupoLinkedin, medio === 'LinkedIn');
+    });
+
+    // Envío a Formspree sin recargar la página
+    formContacto.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        alertaError.hidden = true;
+        btnEnviar.disabled = true;
+        btnEnviar.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Enviando...';
+
+        try {
+            const respuesta = await fetch(formContacto.action, {
+                method: 'POST',
+                body: new FormData(formContacto),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (!respuesta.ok) throw new Error('Formspree respondió con un error');
+
+            // Mensaje de éxito personalizado según el medio que eligió
+            const medio = nombreMedio[selectPreferencia.value] || 'correo';
+            textoExito.textContent = `Gracias por escribirme. Revisaré tu mensaje y te contactaré por ${medio} lo más pronto posible.`;
+
+            // Limpiar el formulario y regresar los campos condicionales a su estado inicial
+            formContacto.reset();
+            mostrarCampo(grupoAsuntoOtro, false);
+            mostrarCampo(grupoTelefono, false);
+            mostrarCampo(grupoLinkedin, false);
+
+            formContacto.hidden = true;
+            cajaExito.hidden = false;
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+            alertaError.hidden = false;
+        } finally {
+            btnEnviar.disabled = false;
+            btnEnviar.innerHTML = textoOriginalBoton;
+        }
+    });
+
+    // "Enviar otro mensaje" -> vuelve a mostrar el formulario vacío
+    btnOtroMensaje.addEventListener('click', () => {
+        cajaExito.hidden = true;
+        formContacto.hidden = false;
+    });
+}

@@ -563,3 +563,19 @@ p .dot-web.me-1 {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+
+/* =========================================
+   CONTACTO: PANTALLA DE ÉXITO Y BOTÓN DESACTIVADO
+   ========================================= */
+.contacto-exito-caja {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+/* Mientras se envía, el botón se ve "apagado" */
+.btn-custom:disabled {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    opacity: 0.7;
+    transform: none;
+}
