@@ -425,3 +425,67 @@ p .dot-prod.me-1,
 p .dot-web.me-1 {
     margin-left: 0;
 }
+
+/* =========================================
+   FORMACIÓN COMPLEMENTARIA
+   ========================================= */
+.form-card {
+    background-color: var(--color-blanco);
+}
+
+/* Círculo con el ícono */
+.form-icono {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    color: var(--color-acento);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Etiqueta pequeña: Diplomado / Certificado / Curso */
+.form-tipo {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-acento);
+    margin-bottom: 0.35rem;
+}
+
+.form-titulo {
+    color: var(--color-oscuro);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+
+.form-emisor {
+    color: #5b6b68;
+    font-size: 0.9rem;
+}
+
+.form-fecha {
+    color: #8a9693;
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+}
+
+/* Enlace de verificación */
+.form-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-acento);
+    text-decoration: none;
+    padding-top: 0.75rem;
+}
+
+.form-link:hover {
+    color: var(--color-oscuro);
+    text-decoration: underline;
+}
