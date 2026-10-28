@@ -70,7 +70,7 @@ new Typed('#typed-hook', optionsHook);
 
 // 2. Poema (Lado Creativo) - Inicia al hacer Scroll
 const stringsPoema = [
-    '"Confía en tu ser<br>Que mañana puede cambiar<br>Aprecia cada amanecer<br>Y has realidad lo que vayas a desear"'
+        '"Confía en tu ser<br>Que mañana puede cambiar<br>Aprecia cada amanecer<br>Y haz realidad lo que vayas a desear"'
 ];
 
 const optionsPoema = {
@@ -188,3 +188,165 @@ if (formContacto) {
         formContacto.hidden = false;
     });
 }
+
+// =========================================
+// ANIMACIÓN: APARICIÓN SUAVE AL HACER SCROLL
+// =========================================
+// Qué elementos se animan. Para agregar o quitar algo, solo edita esta lista.
+const selectoresRevelar = [
+    'section:not(.hero-section) h2',   // títulos de sección
+    '#habilidades p.small',            // leyenda de los puntitos
+    '#sobre-mi .card',
+    '#habilidades .card',
+    '#experiencia .exp-card',
+    '#proyectos .card',
+    '#formacion .card',
+    '#formacion .form-subtitulo'
+];
+
+const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Solo se anima si el navegador lo soporta y la persona no pidió menos movimiento.
+// Si algo falla, los elementos simplemente se quedan visibles como siempre.
+if ('IntersectionObserver' in window && !prefiereMenosMovimiento) {
+    const elementos = document.querySelectorAll(selectoresRevelar.join(', '));
+
+    const observadorRevelar = new IntersectionObserver((entradas, observador) => {
+        entradas.forEach(entrada => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add('visible');
+                observador.unobserve(entrada.target); // se anima una sola vez
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    elementos.forEach(el => {
+        // Efecto "cascada": las tarjetas de una misma fila aparecen una tras otra
+        const columna = el.closest('[class*="col-"]');
+        if (columna && columna.parentElement) {
+            const posicion = Array.from(columna.parentElement.children).indexOf(columna);
+            el.style.animationDelay = `${(posicion % 4) * 100}ms`;
+        }
+
+        el.classList.add('revelar');
+        observadorRevelar.observe(el);
+    });
+}
+
+// =========================================
+// LADO CREATIVO: PARTÍCULAS TIPO TINTA
+// (todo va dentro de una función para no chocar con otras variables del archivo)
+// =========================================
+(() => {
+    const seccion = document.getElementById('lado-creativo');
+    const lienzo = document.getElementById('lienzo-particulas');
+    const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Si falta algo o la persona pidió menos movimiento, no se dibuja nada
+    if (!seccion || !lienzo || !lienzo.getContext || reducirMovimiento) return;
+
+    const ctx = lienzo.getContext('2d');
+    const colores = ['242, 235, 213', '213, 232, 242', '255, 255, 255']; // crema, azul clarito, blanco
+    const RADIO_MOUSE = 90;      // qué tan cerca debe pasar el mouse para empujar las partículas
+    const FUERZA_MOUSE = 1.2;    // qué tan fuerte las empuja
+    let particulas = [];
+    let ancho = 0;
+    let alto = 0;
+    let animacionId = null;
+    const mouse = { x: -9999, y: -9999 };
+
+    function crearParticula() {
+        return {
+            x: Math.random() * ancho,
+            y: Math.random() * alto,
+            radio: 1 + Math.random() * 2.2,
+            vy: 0.15 + Math.random() * 0.35,          // velocidad hacia arriba
+            vx: (Math.random() - 0.5) * 0.2,          // pequeño desvío lateral
+            alfa: 0.15 + Math.random() * 0.35,        // transparencia
+            color: colores[Math.floor(Math.random() * colores.length)]
+        };
+    }
+
+    // Ajusta el lienzo al tamaño de la sección (nítido también en pantallas retina)
+    function ajustarLienzo() {
+        const escala = window.devicePixelRatio || 1;
+        alto = seccion.offsetHeight;
+        lienzo.width = ancho * escala;
+        lienzo.height = alto * escala;
+        ctx.setTransform(escala, 0, 0, escala, 0, 0);
+    }
+
+    // Crea las partículas: 1 por cada 18px de ancho, máximo 90 (en celular salen menos)
+    function reiniciar() {
+        ancho = seccion.offsetWidth;
+        ajustarLienzo();
+        const cantidad = Math.min(90, Math.round(ancho / 18));
+        particulas = Array.from({ length: cantidad }, crearParticula);
+    }
+
+    function dibujar() {
+        ctx.clearRect(0, 0, ancho, alto);
+
+        for (const p of particulas) {
+            // Se apartan del mouse
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const distancia = Math.hypot(dx, dy);
+            if (distancia > 0 && distancia < RADIO_MOUSE) {
+                p.x += (dx / distancia) * FUERZA_MOUSE;
+                p.y += (dy / distancia) * FUERZA_MOUSE;
+            }
+
+            // Flotan hacia arriba
+            p.y -= p.vy;
+            p.x += p.vx;
+
+            // Si salen por arriba, regresan por abajo; si salen por un lado, entran por el otro
+            if (p.y < -10) { p.y = alto + 10; p.x = Math.random() * ancho; }
+            if (p.x < -10) p.x = ancho + 10;
+            else if (p.x > ancho + 10) p.x = -10;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radio, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${p.color}, ${p.alfa})`;
+            ctx.fill();
+        }
+
+        animacionId = requestAnimationFrame(dibujar);
+    }
+
+    function iniciar() {
+        if (!animacionId) animacionId = requestAnimationFrame(dibujar);
+    }
+
+    function detener() {
+        cancelAnimationFrame(animacionId);
+        animacionId = null;
+    }
+
+    // Solo se anima mientras la sección está en pantalla (ahorra batería y procesador)
+    new IntersectionObserver(([entrada]) => {
+        if (entrada.isIntersecting) iniciar();
+        else detener();
+    }).observe(seccion);
+
+    // Posición del mouse relativa a la sección
+    seccion.addEventListener('mousemove', (e) => {
+        const r = seccion.getBoundingClientRect();
+        mouse.x = e.clientX - r.left;
+        mouse.y = e.clientY - r.top;
+    });
+    seccion.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+    });
+
+    // Si cambia el ancho (girar el celular, cambiar tamaño de ventana) se recrean las partículas;
+    // si solo cambia el alto (por ejemplo, mientras se escribe el poema) solo se ajusta el lienzo
+    new ResizeObserver(() => {
+        if (seccion.offsetWidth !== ancho) reiniciar();
+        else if (seccion.offsetHeight !== alto) ajustarLienzo();
+    }).observe(seccion);
+
+    reiniciar();
+})();
